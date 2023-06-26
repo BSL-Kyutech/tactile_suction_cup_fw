@@ -85,6 +85,12 @@ void onMessageCallback(WebsocketsMessage message)
   deserializeJson(doc, msg);
   int data = doc["data"];
 
+  if (data > 0) {
+    digitalWrite(MOSFET, HIGH);
+  } else {
+    digitalWrite(MOSFET, LOW);
+  }
+
   Serial.print("Received Value: ");
   Serial.println(data);
 }
@@ -215,8 +221,9 @@ void setup()
     client.send(WS_msg);
 
     //subscribe
+    doc.clear();
     doc["op"] = "subscribe";
-    doc["topic"] = "/nanorp2040connect/input";
+    doc["topic"] = "/sponge/motor";
     doc["type"] = "std_msgs/Int8";
     serializeJson(doc, WS_msg);
     client.send(WS_msg);
