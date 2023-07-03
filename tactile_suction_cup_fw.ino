@@ -203,7 +203,7 @@ void setup()
 
       doc["op"] = "advertise";
       doc["type"] = "std_msgs/Float32";
-      sprintf(topic_name,"/sponge/ch%d", i);
+      sprintf(topic_name,"/sponge/ch%draw", i);
       doc["topic"] = topic_name;
       serializeJson(doc, WS_msg);
       client.send(WS_msg);
@@ -323,7 +323,7 @@ void loop()
       char topic_name[256];
 
       doc["op"] = "publish";
-      sprintf(topic_name,"/sponge/ch%d", i);
+      sprintf(topic_name,"/sponge/ch%draw", i);
       doc["topic"] = topic_name;
       msg["data"] = ch[i];
       doc["msg"] = msg;

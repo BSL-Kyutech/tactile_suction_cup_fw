@@ -63,10 +63,10 @@
 // Debug Level from 0 to 4
 #define _WEBSOCKETS_LOGLEVEL_     3
 
-const char* ssid = "BSL"; //Enter SSID
-const char* password = "b10Inspired"; //Enter Password
+const char* ssid = "ros2net-G-D160"; //Enter SSID
+const char* password = "ugijcrxj63gcw"; //Enter Password
 
-const char* websockets_server_host = "172.17.39.25"; //Enter server address
+const char* websockets_server_host = "172.31.1.200"; //Enter server address
 
 const uint16_t websockets_server_port = 9090; // Enter server port
 
